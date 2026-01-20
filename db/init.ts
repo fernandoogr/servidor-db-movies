@@ -7,7 +7,7 @@ export async function initDB(){
     db.run(schema)
     const peliculas = getAllMovies(db)
     if (peliculas.length === 0) {
-        const dump: string = await Bun.file("./dump.sql").text()
+        const dump: string = await Bun.file("./db/dump.sql").text()
         db.run(dump)
     }
     return db
