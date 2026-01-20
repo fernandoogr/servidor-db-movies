@@ -1,4 +1,4 @@
-
+DROP TABLE IF EXISTS peliculas;
 CREATE TABLE peliculas(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nombre TEXT NOT NULL,
