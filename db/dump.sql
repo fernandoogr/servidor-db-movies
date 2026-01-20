@@ -1,10 +1,4 @@
-DROP TABLE IF EXISTS peliculas;
-CREATE TABLE peliculas(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nombre TEXT NOT NULL,
-    genero TEXT NOT NULL,
-    created_at DATATIME DEFAULT CURRENT_TIMESTAMP
-);
+BEGIN TRANSACTION;
 INSERT INTO peliculas VALUES(1,'test','test','2026-01-15 10:07:26');
 INSERT INTO peliculas VALUES(2,'The Matrix','Sci-fiction','2026-01-15 10:07:26');
 INSERT INTO peliculas VALUES(3,'Evangelion','Romantic','2026-01-15 10:07:26');
@@ -10338,6 +10332,5 @@ INSERT INTO peliculas VALUES(10330,'Le Grand Restaurant (1966)','Comedy','2026-0
 INSERT INTO peliculas VALUES(10331,'A Very Murray Christmas (2015)','Comedy','2026-01-15 10:11:08');
 INSERT INTO peliculas VALUES(10332,'The Big Short (2015)','Drama','2026-01-15 10:11:08');
 INSERT INTO peliculas VALUES(10333,'Marco Polo: One Hundred Eyes (2015)','(no genres listed)','2026-01-15 10:11:08');
-DELETE FROM sqlite_sequence;
-INSERT INTO sqlite_sequence VALUES('peliculas',10333);
+
 COMMIT;
