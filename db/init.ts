@@ -1,6 +1,7 @@
 import { Database } from "bun:sqlite"
+import { getAllMovies } from "../models/movies"
 
-async function initDB(){
+export async function initDB(){
     const db = new Database("movies.db")
     const schema: string = await Bun.file("./schema.sql").text()
     db.run(schema)
@@ -11,14 +12,3 @@ async function initDB(){
     }
     return db
 }
-
-
-function getAllMovies(db: Database) {
-    const query = db.query("SELECT * FROM peliculas")
-    return query.all()
-}
-
-
-const db = await initDB()
-const peliculas  = getAllMovies(db)
-console.log(peliculas) 
