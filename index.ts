@@ -12,7 +12,7 @@ app.get("/movies", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server corriendo en el puerto º${PORT}`);
+    console.log(`Server corriendo en el puerto ${PORT}`);
 });
 
 
